@@ -26,7 +26,7 @@ hook Sload address value s_owner {
 }
 
 
-rule sanityCheck {
+rule sanity_check {
     method f;
     env e;
     calldataarg args;
@@ -39,8 +39,8 @@ rule sanityCheck {
 
 
 
-// only the owner should be able to set a new password
-rule onlyTheOwnerCanSetNewPassword() {
+//**Description: only the owner should be able to set a new password**
+rule only_the_owner_can_set_new_password() {
     env e;
 
     address owner;
@@ -55,8 +55,8 @@ rule onlyTheOwnerCanSetNewPassword() {
     assert passwordAfter != passwordBefore => owner == e.msg.sender;
 }
 
-//only the owner should be able to view the password
-rule onlyTheOwnerShouldBeAbleToViewPassword() {
+//**Description: only the owner should be able to view the password**
+rule only_the_owner_should_be_able_to_view_password() {
     env e;
 
     getPassword@withrevert(e);
@@ -65,8 +65,8 @@ rule onlyTheOwnerShouldBeAbleToViewPassword() {
     assert !didRevert => e.msg.sender == ghost_owner;
 }
 
-//owner should never be able to change
-rule ownerShouldNeverChange() {
+//**Description: owner should never be able to change**
+rule owner_should_never_change() {
     env e;
     method f;
     calldataarg args;
@@ -81,8 +81,8 @@ rule ownerShouldNeverChange() {
 
 }
 
-//only setPassword can change the password
-rule only_setPassword_canChangePassword() {
+//**Description: only setPassword can change the password**
+rule only_setPassword_can_change_password() {
     env e;
     method f;
     calldataarg args;
@@ -94,23 +94,4 @@ rule only_setPassword_canChangePassword() {
     bytes32 passwordAfter = ghost_password;
 
     assert passwordBefore != passwordAfter => f.selector == sig:setPassword(string).selector;
-}
-
-//when password is updated it should be updated to the correct value
-rule passwordUpdatedToCorrectValue() {
-    env e;
-
-    address owner;
-    string password;
-    bytes32 passwordhash = keccak256("password");
-    // require keccak256(password) == passwordhash;
-    require keccak256(password) == to_bytes32(0x5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8); 
-
-    bytes32 passwordBefore = ghost_password;
-
-    setPassword(e, password);
-
-    bytes32 passwordAfter = ghost_password;
-
-    assert passwordAfter == passwordBefore;
 }
