@@ -106,7 +106,7 @@ output/6054208/679cb13fd9b14301a2089737a1d8753a?anonymousKey=3c4aca85c583191d637
  
 | Severity               | Impact: High | Impact: Medium | Impact: Low |
 | ---------------------- | ------------ | -------------- | ----------- |
-| **Likelihood: High**   | Critical     | High           | Medium      |
+| **Likelihood: High**   | High         | High           | Medium      |
 | **Likelihood: Medium** | High         | Medium         | Low         |
 | **Likelihood: Low**    | Medium       | Low            | Low         |
 
