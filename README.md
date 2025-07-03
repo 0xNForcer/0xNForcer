@@ -16,7 +16,7 @@ Here are some of my recent audits:
   <tbody>
     <tr>
       <td>June 2025</td>
-      <td>PasswordStore</td>
+      <td>First Flight #01 - PasswordStore</td>
       <td><a href="https://github.com/0xNForcer/0xNForcer/blob/main/Reports/2025-06_Cyfrin_FF_001_PasswordStore.md" target="_blank">Link</a></td>
     </tr>
   
