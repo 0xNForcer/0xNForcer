@@ -1,4 +1,4 @@
-I provide formal verification services for smart contracts using Certora Prover, focusing on auditing DeFi and blockchain protocols. I thoroughly verify critical properties and invariants to identify and reduce issues before deployment.
+I provide formal verification services for smart contracts using Certora Prover, focusing on Solidity. I thoroughly verify critical properties and invariants to identify and reduce issues before deployment.
 
 Reach out if you're looking to strengthen your project's security through formal verification. Check out my work [here](https://github.com/0xNForcer) or reach out on [@0xNForcer](https://x.com/0xNForcer).
 
